@@ -27,6 +27,33 @@ python -m venv venv
 
 O navegador abrirá em `http://localhost:8501`.
 
+## Executar com Docker
+
+Esta é a opção recomendada para abrir o trabalho em outra máquina. É necessário
+ter apenas o Docker Desktop instalado; Python e Streamlit ficam dentro da imagem.
+
+Na pasta do projeto, construa a imagem:
+
+```powershell
+docker build -t mineracao-dash:latest .
+```
+
+Em seguida, execute o contêiner:
+
+```powershell
+docker run --rm -p 8501:8501 --name mineracao-dash mineracao-dash:latest
+```
+
+Abra <http://localhost:8501> no navegador. Para encerrar, pressione `Ctrl+C` no
+terminal. Se a porta 8501 estiver ocupada, use `-p 8502:8501` e abra
+<http://localhost:8502>.
+
+Para conferir se o contêiner está saudável em outro terminal:
+
+```powershell
+docker ps --filter name=mineracao-dash
+```
+
 ## Arquivos usados na entrega
 
 - `app.py`: dashboard Streamlit final.

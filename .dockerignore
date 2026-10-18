@@ -1,0 +1,10 @@
+.git
+.gitignore
+venv
+__pycache__
+*.py[cod]
+README.md
+GUIA_DE_ESTUDO.md
+.streamlit
+*.tar
+*.zip
